@@ -1,12 +1,17 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import "./App.css";
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
 
 function App() {
 	return (
 		<Router>
 			<Header />
-			<main className='min-h-screen p-4'></main>
+			<Routes>
+				<Route path='/' element={<HomePage />} />
+				<Route path='/projects' element={<ProjectsPage />} />
+			</Routes>
 		</Router>
 	);
 }
