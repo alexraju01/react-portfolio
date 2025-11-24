@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<HomePage />} />
 				<Route path='/projects' element={<ProjectsPage />} />
+				<Route path='/projects/:id' element={<ProjectDetailPage />} />
 			</Routes>
 		</Router>
 	);

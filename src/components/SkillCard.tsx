@@ -1,6 +1,4 @@
-import { Code2, Icon, Laptop, Rocket } from "lucide-react";
-
-type IconName = "Code2" | "Laptop" | "Rocket";
+import { Code2, Laptop, Rocket } from "lucide-react";
 
 interface SkillCardProps {
 	iconName: IconName;
@@ -13,6 +11,8 @@ const iconMap = {
 	Laptop: Laptop,
 	Rocket: Rocket,
 };
+
+export type IconName = keyof typeof iconMap;
 
 const SkillCard = ({ iconName, title, skills }: SkillCardProps) => {
 	const IconComponent = iconMap[iconName];
