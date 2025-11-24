@@ -42,12 +42,6 @@ const Header = () => {
 					<nav className='hidden md:flex items-center space-x-8'>
 						<NavLinkItem to='/'>Home</NavLinkItem>
 						<NavLinkItem to='/projects'>Projects</NavLinkItem>
-						{/* Contact Button */}
-						<Link
-							to='/contact'
-							className='px-5 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-full shadow-md hover:bg-indigo-700 transition duration-150 ease-in-out'>
-							Contact
-						</Link>
 					</nav>
 
 					{/* Mobile Menu Button (Hamburger) */}

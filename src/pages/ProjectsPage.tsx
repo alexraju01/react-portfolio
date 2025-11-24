@@ -14,18 +14,18 @@ const ProjectsPage = () => {
 				modern tools.
 			</p>
 
-			<div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto'>
+			<div className='grid sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto'>
 				{projects.map((project, idx) => (
 					<Link
 						to={`/projects/${project.id}`}
 						key={idx}
 						className='bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition block'>
 						{/* Project Image */}
-						<div className='overflow-hidden group'>
+						<div className='overflow-hidden '>
 							<img
 								src={project.image}
 								alt={project.title}
-								className='w-full h-48 object-cover group-hover:scale-110 transition duration-500'
+								className='w-full aspect-auto object-fit  transition duration-500'
 							/>
 						</div>
 
@@ -46,17 +46,25 @@ const ProjectsPage = () => {
 
 							{/* Buttons */}
 							<div className='flex items-center gap-4'>
-								<button
-									onClick={(e) => e.preventDefault()}
+								<a
+									href={project.github}
+									target='_blank'
+									rel='noopener noreferrer'
+									onClick={(e) => e.stopPropagation()}
 									className='flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 cursor-pointer transition'>
 									<Github size={18} /> Code
-								</button>
+								</a>
 
-								<button
-									onClick={(e) => e.preventDefault()}
-									className='flex items-center gap-2 text-indigo-600 font-medium hover:text-indigo-800 transition'>
-									<ExternalLink size={18} /> Live Demo
-								</button>
+								{project.demo && (
+									<a
+										href={project.demo}
+										target='_blank'
+										onClick={(e) => e.stopPropagation()}
+										rel='noopener noreferrer'
+										className='flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:text-indigo-800 transition'>
+										<ExternalLink size={18} /> Live Demo
+									</a>
+								)}
 							</div>
 						</div>
 					</Link>

@@ -1,4 +1,4 @@
-import { Code2, Github, Mail } from "lucide-react";
+import { Code2, Github } from "lucide-react";
 import { skills } from "../data/skills";
 import SkillCard from "../components/SkillCard";
 
@@ -47,11 +47,11 @@ const HomePage = () => {
 					GitHub <Github size={18} />
 				</a>
 
-				<a
+				{/* <a
 					href='/contact'
 					className='px-6 py-3 bg-white border border-gray-300 text-gray-900 rounded-lg shadow hover:bg-gray-100 transition flex items-center gap-2'>
 					Contact Me <Mail size={18} />
-				</a>
+				</a> */}
 			</div>
 		</div>
 	);
